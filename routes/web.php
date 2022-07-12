@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+//route di register
+Route::get('register','App\Http\Controllers\LoginController@register_form');
+Route::post('register','App\Http\Controllers\LoginController@do_register');
+
+//route di login
+Route::get('login','App\Http\Controllers\LoginController@login_form');
+Route::post('login','App\Http\Controllers\LoginController@do_login');
+
+//route di logout
+Route::get('logout','App\Http\Controllers\LoginController@logout');
+
+//route home
+Route::get('home','App\Http\Controllers\HomesiteController@home');
+Route::get('home/add/{pic}','App\Http\Controllers\HomesiteController@add');
+
+//route profilo
+Route::get('profile','App\Http\Controllers\ProfileController@profile');
+Route::get('profile/delete/{pics}','App\Http\Controllers\ProfileController@delete');
